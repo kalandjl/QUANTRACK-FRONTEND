@@ -18,7 +18,9 @@ const RootLayout = ( { children }: Readonly<{children: React.ReactNode }> ) => {
                 className={``}
             >
                 <Nav />
-                {children}
+                <main id="main" className="bg-zinc-800 min-h-screen">
+                    {children}
+                </main>
                 <Footer />
             </body>
         </html>
