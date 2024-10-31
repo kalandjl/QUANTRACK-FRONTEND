@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Quantech",
@@ -15,7 +17,9 @@ const RootLayout = ( { children }: Readonly<{children: React.ReactNode }> ) => {
             <body
                 className={``}
             >
+                <Nav />
                 {children}
+                <Footer />
             </body>
         </html>
     )
