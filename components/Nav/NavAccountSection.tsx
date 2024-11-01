@@ -2,6 +2,7 @@
 
 import useAuthState from "@/util/useAuthState";
 import { FC } from "react";
+import Loader from "../Loader";
 
 interface Props {
 
@@ -22,7 +23,16 @@ const NavAccountSection: FC<Props> = (props) => {
                 </> 
                 : 
                 <>
-                    {/* Login & Signup */}
+                    {
+                    loading ? 
+                    <>
+                        <Loader open={loading} fullscreen={false} params={{color: "#fff"}}/>
+                    </>
+                    :
+                    <>
+                        {/* Login & Signup */}
+                    </>
+                    }
                 </>
                 }
             </section>

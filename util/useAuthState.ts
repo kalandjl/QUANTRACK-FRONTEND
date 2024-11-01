@@ -1,4 +1,4 @@
-import UserObj from "@/lib/types/userObj"
+import UserObj from "@/lib/types/UserObj"
 import { useEffect, useState } from "react"
 
 
@@ -42,12 +42,12 @@ const useAuthState = (props: Props): [UserObj | undefined, boolean] => {
         }
 
         doFetch()
-            .then((res) => setUser(res))
+            .then((res) => setUser(undefined))
             .catch((e) => {
                 console.error(e)
                 setUser(undefined) // Reset user on error
             })
-            .finally(() => setLoading(false))
+            .finally(() => setLoading(true))
         
     }, []) // Re-run the effect when props change
 
