@@ -42,12 +42,12 @@ const useAuthState = (props: Props): [UserObj | undefined, boolean] => {
         }
 
         doFetch()
-            .then((res) => setUser(undefined))
+            .then((res) => setUser(res))
             .catch((e) => {
                 console.error(e)
                 setUser(undefined) // Reset user on error
             })
-            .finally(() => setLoading(true))
+            .finally(() => setLoading(false))
         
     }, []) // Re-run the effect when props change
 

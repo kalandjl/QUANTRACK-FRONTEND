@@ -14,7 +14,7 @@ const NavAccountSection: FC<Props> = (props) => {
     
     return (
         <>
-            <section id="account-wrap">
+            <section id="account-wrap" className="min-w-20">
                 {/* Depending on auth state */}
                 {user ? 
                 <>

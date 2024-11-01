@@ -12,7 +12,7 @@ const Nav: FC<Props> = (props) => {
     return (
         <>
             <nav id="nav-wrap">
-                <div id="nav" className="bg-zinc-900 min-h-20 flex items-center w-full">
+                <div id="nav" className="bg-zinc-900 min-h-20 flex items-center w-full px-24">
                     <div id="nav-flex" className="flex justify-between w-full">
                         <section id="logo-wrap">
                             {/* Logo image here */}
