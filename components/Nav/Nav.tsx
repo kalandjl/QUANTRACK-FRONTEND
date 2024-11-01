@@ -1,14 +1,13 @@
 import { FC } from "react";
 import { mainLinks } from "./NavOptions";
 import useAuthState from "@/util/useAuthState";
+import NavAccountSection from "./NavAccountSection";
 
 interface Props {
     
 }
 
 const Nav: FC<Props> = (props) => {
-
-    let [ user ] = useAuthState({})
 
     return (
         <>
@@ -25,24 +24,21 @@ const Nav: FC<Props> = (props) => {
                                 2xl:gap-20 xl:gap-20 lg:gap-16 md:gap-10 sm:gap-6 
                             `}>
                                 {mainLinks.map((link, i) => (
-                                    <div id="link-wrap">
+                                    <div id="link-wrap" key={i}>
                                         <p id="link"
                                         className={`
                                             font-semibold text-stone-300 
                                             2xl:text-xl xl:text-xl lg:texl-xl md:text-lg sm:text-md
                                             hover:underline hover:scale-105 hover: cursor-pointer
                                             transition ease-in-out
-                                        `} 
-                                        key={i}>
+                                        `}>
                                             {link}
                                         </p>
                                     </div>
                                 ))}
                             </div>
                         </section>
-                        <section id="account-wrap">
-
-                        </section>
+                        <NavAccountSection />
                     </div>
                 </div>
             </nav>
