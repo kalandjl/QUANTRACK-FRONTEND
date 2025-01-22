@@ -1,41 +1,34 @@
 "use client";
-
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const SignInForm = () => {
+const ForgotPasswordForm = () => {
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState("");
-    const [formData, setFormData] = useState({
-        email: "",
-        password: "",
-        rememberMe: false,
-    });
+    const [success, setSuccess] = useState(false);
+    const [email, setEmail] = useState("");
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
         setError("");
+        setSuccess(false);
 
         try {
-            // TODO: Implement your authentication logic here
-            // const response = await signIn(formData.email, formData.password);
-            // if (response.success) router.push('/dashboard');
-            
-            // Temporary mock delay
+            // TODO: Implement password reset logic here
             await new Promise(resolve => setTimeout(resolve, 1000));
-            router.push('/dashboard');
+            setSuccess(true);
         } catch (err) {
-            setError("Invalid email or password");
+            setError("Failed to send reset instructions. Please try again.");
         } finally {
             setIsLoading(false);
         }
     };
 
     return (
-        <div className="celestial-container form-container">
+        <div className="celestial-container">
             {/* Orbiting particles */}
             <div className="absolute left-1/2 top-1/2">
                 <div className="celestial-particle particle-1" />
@@ -48,6 +41,14 @@ const SignInForm = () => {
                 {error && (
                     <div className="rounded-lg bg-red-500/10 p-4 backdrop-blur-sm">
                         <p className="text-sm text-red-400">{error}</p>
+                    </div>
+                )}
+
+                {success && (
+                    <div className="rounded-lg bg-green-500/10 p-4 backdrop-blur-sm">
+                        <p className="text-sm text-green-400">
+                            Reset instructions have been sent to your email.
+                        </p>
                     </div>
                 )}
                 
@@ -64,52 +65,9 @@ const SignInForm = () => {
                             required
                             className="mt-1 block w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-stone-300 placeholder-stone-400 backdrop-blur-sm transition-colors focus:border-stone-400 focus:bg-white/10 focus:outline-none focus:ring-0"
                             placeholder="Enter your email"
-                            value={formData.email}
-                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                         />
-                    </div>
-                    
-                    <div>
-                        <label htmlFor="password" className="block text-sm font-medium text-stone-300">
-                            Password
-                        </label>
-                        <input
-                            id="password"
-                            name="password"
-                            type="password"
-                            autoComplete="current-password"
-                            required
-                            className="mt-1 block w-full rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-stone-300 placeholder-stone-400 backdrop-blur-sm transition-colors focus:border-stone-400 focus:bg-white/10 focus:outline-none focus:ring-0"
-                            placeholder="Enter your password"
-                            value={formData.password}
-                            onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                        />
-                    </div>
-                </div>
-
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                        <input
-                            id="remember-me"
-                            name="remember-me"
-                            type="checkbox"
-                            className="h-4 w-4 rounded border-white/10 bg-white/5 text-stone-500 focus:ring-0 focus:ring-offset-0"
-                            checked={formData.rememberMe}
-                            onChange={(e) => setFormData({ ...formData, rememberMe: e.target.checked })}
-                        />
-                        <label htmlFor="remember-me" className="ml-2 block text-sm text-stone-300">
-                            Remember me
-                        </label>
-                    </div>
-
-                    <div className="text-sm">
-                        <Link 
-                            href="/forgot-password"
-                            prefetch={true}
-                            className="font-medium text-stone-300 hover:text-stone-400 transition-colors"
-                        >
-                            Forgot your password?
-                        </Link>
                     </div>
                 </div>
 
@@ -119,19 +77,19 @@ const SignInForm = () => {
                         disabled={isLoading}
                         className="group relative flex w-full justify-center rounded-lg border border-white/10 bg-white/10 px-4 py-2.5 text-sm font-semibold text-stone-300 backdrop-blur-sm transition-all hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-zinc-900 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                        {isLoading ? "Signing in..." : "Sign in"}
+                        {isLoading ? "Sending..." : "Send reset instructions"}
                     </button>
                 </div>
 
                 <div className="text-center">
                     <p className="text-sm text-stone-400">
-                        Don't have an account?{' '}
+                        Remember your password?{' '}
                         <Link 
-                            href="/signup" 
+                            href="/signin"
                             prefetch={true}
                             className="font-medium text-stone-300 hover:text-stone-400 transition-colors"
                         >
-                            Sign up
+                            Sign in
                         </Link>
                     </p>
                 </div>
@@ -140,4 +98,4 @@ const SignInForm = () => {
     );
 };
 
-export default SignInForm; 
+export default ForgotPasswordForm; 

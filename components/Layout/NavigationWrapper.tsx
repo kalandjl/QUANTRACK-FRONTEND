@@ -8,7 +8,10 @@ interface Props {
 
 const NavigationWrapper = ({ children }: Props) => {
     const pathname = usePathname();
-    const showNav = !pathname.includes("/signin");
+    // Hide nav on auth pages
+    const showNav = !pathname.includes("/signin") && 
+                   !pathname.includes("/signup") && 
+                   !pathname.includes("/forgot-password");
 
     return (
         <>
