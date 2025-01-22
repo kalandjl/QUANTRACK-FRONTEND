@@ -6,6 +6,7 @@ interface Props {
 }
 
 const PasswordStrengthIndicator: FC<Props> = ({ password }) => {
+    
     const getStrength = (password: string) => {
         let strength = 0;
         if (password.length >= 8) strength++;

@@ -19,7 +19,7 @@ const useAuthState = (props: Props): [UserObj | undefined, boolean] => {
         setLoading(true)
 
         // Asynchornous fetching 
-        const doFetch = async (): Promise<UserObj> => {
+        const doFetch = async (): Promise<UserObj | undefined> => {
 
             // Example auth fetching code
             // fetch('http://localhost:4000/auth/get-user', {
@@ -38,7 +38,7 @@ const useAuthState = (props: Props): [UserObj | undefined, boolean] => {
             //     setLoading(false) // Stop loading once the fetch completes
             // })
 
-            return {}
+            return undefined
         }
 
         doFetch()
