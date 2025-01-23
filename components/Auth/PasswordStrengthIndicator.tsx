@@ -5,8 +5,32 @@ interface Props {
     password: string;
 }
 
+const getStrengthStyle = (strength: number) => {
+
+    switch (strength) {
+
+        case 0:
+            return "bg-red-600"
+            
+        case 1:
+            return "bg-red-600"
+
+        case 2:
+            return "bg-orange-500"
+
+        case 3:
+            return "bg-yellow-400"
+
+        case 4:
+            return "bg-green-500 "
+
+    }
+
+            
+}
+
 const PasswordStrengthIndicator: FC<Props> = ({ password }) => {
-    
+
     const getStrength = (password: string) => {
         let strength = 0;
         if (password.length >= 8) strength++;
@@ -15,6 +39,8 @@ const PasswordStrengthIndicator: FC<Props> = ({ password }) => {
         if (/[^A-Za-z0-9]/.test(password)) strength++;
         return strength;
     };
+
+
 
     const strength = getStrength(password);
 
@@ -26,7 +52,8 @@ const PasswordStrengthIndicator: FC<Props> = ({ password }) => {
                         key={i}
                         className={`h-1 flex-1 rounded-full transition-colors ${
                             i < strength 
-                                ? 'bg-stone-400' 
+                                ? 
+                                getStrengthStyle(strength)
                                 : 'bg-white/10'
                         }`}
                     />
