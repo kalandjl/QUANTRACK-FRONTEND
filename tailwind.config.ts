@@ -29,6 +29,9 @@ const config: Config = {
         'ping': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
         'spin-reverse': 'spin 6s linear infinite reverse',
         'slide-in': 'slideIn 1s ease-out forwards',
+        'spin-slow': 'spin 3s linear infinite',
+        'loading-progress': 'loadingProgress 1s ease-in-out infinite',
+        'fade-out': 'fadeOut 0.5s ease-out forwards',
       },
       keyframes: {
         blob: {
@@ -121,6 +124,18 @@ const config: Config = {
             opacity: '1'
           }
         },
+        loadingProgress: {
+          '0%': { 
+            transform: 'translateX(-100%)',
+          },
+          '100%': { 
+            transform: 'translateX(100%)',
+          }
+        },
+        fadeOut: {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        }
       },
     },
   },

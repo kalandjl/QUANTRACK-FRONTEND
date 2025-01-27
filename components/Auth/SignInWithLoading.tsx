@@ -12,7 +12,7 @@ const SignInWithLoading = ({ children }: Props) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 5);
+        }, 1000);
 
         return () => clearTimeout(timer);
     }, []);

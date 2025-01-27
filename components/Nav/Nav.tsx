@@ -1,9 +1,16 @@
+"use client";
 import { FC, useState } from "react";
 import { mainLinks } from "./NavOptions";
 import Link from "next/link";
+import { usePathname } from 'next/navigation';
 
 const Nav: FC = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
+
+    const isActivePath = (path: string) => {
+        return pathname === path;
+    };
 
     return (
         <nav className="sticky top-0 z-50 bg-zinc-800 border-b border-zinc-700">
@@ -124,10 +131,13 @@ const Nav: FC = () => {
                             <Link
                                 key={link.name}
                                 href={link.path}
-                                className="text-stone-300 hover:text-white px-3 py-2 text-sm font-medium relative group"
+                                className={`text-stone-300 hover:text-white px-3 py-2 text-sm font-medium relative group
+                                    ${isActivePath(link.path) ? 'text-white' : ''}`}
                             >
                                 {link.name}
-                                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform" />
+                                <span className={`absolute inset-x-0 bottom-0 h-0.5 bg-stone-300 transform transition-transform
+                                    ${isActivePath(link.path) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} 
+                                />
                             </Link>
                         ))}
                         <Link
@@ -166,14 +176,15 @@ const Nav: FC = () => {
                         <Link
                             key={link.name}
                             href={link.path}
-                            className="block px-3 py-2 rounded-md text-base font-medium text-stone-300 hover:text-white hover:bg-zinc-800"
+                            className={`block px-3 py-2 rounded-md text-base font-medium text-stone-300 hover:text-white hover:bg-zinc-800
+                                ${isActivePath(link.path) ? 'bg-zinc-800 text-white' : ''}`}
                         >
                             {link.name}
                         </Link>
                     ))}
                     <Link
                         href="/signin"
-                        className="block px-3 py-2 rounded-md text-base font-medium text-white bg-gradient-to-r from-purple-600 to-pink-600"
+                        className="block px-3 py-2 rounded-md text-base font-medium text-white bg-black hover:bg-zinc-900"
                     >
                         Sign in
                     </Link>
