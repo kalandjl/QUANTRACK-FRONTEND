@@ -1,6 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
 import Nav from "@/components/Nav";
+import Footer from "@/components/Footer/Footer";
 
 interface Props {
     children: React.ReactNode;
@@ -8,16 +9,18 @@ interface Props {
 
 const NavigationWrapper = ({ children }: Props) => {
     const pathname = usePathname();
-    // Hide nav on auth pages
-    const showNav = !pathname.includes("/signin") && 
-                   !pathname.includes("/signup") && 
-                   !pathname.includes("/forgot-password");
+    
+    // Show nav on all pages
+    const showNav = true;
 
     return (
-        <>
+        <div className="min-h-screen flex flex-col">
             {showNav && <Nav />}
-            {children}
-        </>
+            <main className="flex-grow">
+                {children}
+            </main>
+            <Footer />
+        </div>
     );
 };
 

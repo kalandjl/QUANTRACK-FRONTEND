@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Footer from "@/components/Footer";
 import NavigationWrapper from "@/components/Layout/NavigationWrapper";
 
 export const metadata: Metadata = {
@@ -18,7 +17,6 @@ const RootLayout = ({ children }: Readonly<{children: React.ReactNode }>) => {
                         {children}
                     </main>
                 </NavigationWrapper>
-                <Footer />
             </body>
         </html>
     );
