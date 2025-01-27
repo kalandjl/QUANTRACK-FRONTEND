@@ -4,7 +4,7 @@ import Link from "next/link";
 import StatsSection from "@/components/Home/StatsSection";
 import FeaturesSection from "@/components/Home/FeaturesSection";
 import HomeWithLoading from "@/components/Home/HomeWithLoading";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useScrollReveal } from "@/util/useScrollReveal";
 
 const Home: NextPage = () => {
     useScrollReveal();
