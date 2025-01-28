@@ -1,6 +1,7 @@
 "use client";
 import { FC, useEffect, useState } from "react";
 import LoadingScreen from "@/components/LoadingScreen";
+import { homeLoadingTime } from "@/lib/ui/vars";
 
 interface Props {
     children: React.ReactNode;
@@ -18,7 +19,7 @@ const HomeWithLoading: FC<Props> = ({ children }) => {
             // Add a small delay for the fade-out animation
             const transitionTimer = setTimeout(() => {
                 setIsLoading(false);
-            }, 500); // Match this with the fadeOut animation duration
+            }, homeLoadingTime); // Match this with the fadeOut animation duration
 
             return () => clearTimeout(transitionTimer);
         }, 1000);
