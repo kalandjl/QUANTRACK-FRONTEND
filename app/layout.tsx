@@ -13,7 +13,7 @@ const RootLayout = ({ children }: Readonly<{children: React.ReactNode }>) => {
         <html lang="en">
             <body className={``}>
                 <NavigationWrapper>
-                    <main id="main" className="bg-zinc-800 min-h-screen">
+                    <main id="main" className="bg-zinc-900 min-h-screen">
                         {children}
                     </main>
                 </NavigationWrapper>

@@ -11,7 +11,7 @@ const Home: NextPage = () => {
 
     return (
         <HomeWithLoading>
-            <div className="bg-zinc-900">
+            <div id="home-page-wrap">
                 {/* Hero Section */}
                 <section className="relative px-4 sm:px-6 lg:px-8 py-16">
                     <div className="max-w-7xl mx-auto">
