@@ -1,14 +1,14 @@
 "use client";
 import { NextPage } from "next";
-import { SignInForm } from "@/components/Auth";
+import { SignUpForm } from "@/components/Auth";
 import SignInWithLoading from "@/components/Auth/SignInWithLoading";
 
-const SignIn: NextPage = () => {
+const SignUp: NextPage = () => {
     return (
         <SignInWithLoading>
-            <SignInForm />
+            <SignUpForm />
         </SignInWithLoading>
     );
 };
 
-export default SignIn; 
+export default SignUp; 

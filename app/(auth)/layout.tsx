@@ -48,38 +48,34 @@ export default function AuthLayout({
                 </div>
             </div>
 
-            {/* Content with flip animation */}
-            <div className="auth-perspective">
-                <AnimatePresence mode="wait" initial={false}>
-                    <motion.div
-                        key={pageKey}
-                        initial={{ 
-                            rotateY: -90,
-                            opacity: 0,
-                            transformPerspective: 2500,
-                            scale: 0.9
-                        }}
-                        animate={{ 
-                            rotateY: 0,
-                            opacity: 1,
-                            scale: 1
-                        }}
-                        exit={{ 
-                            rotateY: 90,
-                            opacity: 0,
-                            scale: 0.9
-                        }}
-                        transition={{
-                            type: "spring",
-                            damping: 20,
-                            stiffness: 100,
-                            duration: 0.3
-                        }}
-                        className="preserve-3d w-full"
-                    >
-                        {children}
-                    </motion.div>
-                </AnimatePresence>
+            {/* Content with center alignment and animation */}
+            <div className="flex min-h-screen items-center justify-center">
+                <div className="w-full max-w-md px-4">
+                    <AnimatePresence mode="wait" initial={false}>
+                        <motion.div
+                            key={pageKey}
+                            initial={{ 
+                                y: 20,
+                                opacity: 0,
+                            }}
+                            animate={{ 
+                                y: 0,
+                                opacity: 1,
+                            }}
+                            exit={{ 
+                                y: -20,
+                                opacity: 0,
+                            }}
+                            transition={{
+                                type: "spring",
+                                damping: 20,
+                                stiffness: 100,
+                            }}
+                        >
+                            {children}
+                        </motion.div>
+                    </AnimatePresence>
+                </div>
             </div>
         </div>
     );

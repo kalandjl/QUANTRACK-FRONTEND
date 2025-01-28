@@ -13,7 +13,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const [isCollapsed, setIsCollapsed] = useState(false)
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="flex h-screen bg-zinc-900 overflow-hidden">
       {/* Sidebar - collapsible on mobile */}
       <div className="fixed md:relative z-50">
         <Sidebar isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
@@ -25,7 +25,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         ${isCollapsed ? 'pl-0 md:pl-20' : 'pl-[80px]'}
       `}>
         <main className="flex-1 overflow-hidden">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+          <div className="h-full p-4 md:p-6 lg:p-8">
             <div className="h-full overflow-y-auto">
               <Suspense fallback={<DashboardLoading />}>
                 {children}

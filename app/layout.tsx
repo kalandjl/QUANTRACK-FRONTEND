@@ -18,7 +18,7 @@ export default function RootLayout({
             <head>
                 <link rel="manifest" href="/manifest.json" />
             </head>
-            <body className="overflow-x-hidden">
+            <body className={``}>
                 <ClientLayout>
                     {children}
                 </ClientLayout>

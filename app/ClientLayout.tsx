@@ -1,7 +1,7 @@
 'use client'
 import { ReactNode, useEffect } from 'react'
 import * as serviceWorker from './serviceWorker'
-import Navbar from "@/components/Layout/Navbar"
+import NavbarHandler from "@/components/layouts/NavbarHandler"
 
 interface ClientLayoutProps {
     children: ReactNode
@@ -19,12 +19,12 @@ const ClientLayout = ({ children }: ClientLayoutProps) => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-zinc-900">
-            <Navbar />
+        <>
+            <NavbarHandler />
             <main id="main" className="bg-zinc-900 min-h-screen">
                 {children}
             </main>
-        </div>
+        </>
     );
 };
 
