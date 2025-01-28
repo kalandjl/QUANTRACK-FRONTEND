@@ -3,10 +3,10 @@ import { useEffect } from 'react';
 
 export const useScrollReveal = () => {
     useEffect(() => {
-        const handleScroll = () => {
-            const reveals = document.querySelectorAll('.reveal');
-            
-            reveals.forEach((element) => {
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const reveal = () => {
+            revealElements.forEach((element) => {
                 const windowHeight = window.innerHeight;
                 const elementTop = element.getBoundingClientRect().top;
                 const elementVisible = 150; // Adjust this value to change when the animation triggers
@@ -17,9 +17,9 @@ export const useScrollReveal = () => {
             });
         };
 
-        window.addEventListener('scroll', handleScroll);
-        handleScroll(); // Check initial state
+        window.addEventListener('scroll', reveal);
+        reveal(); // Initial check
 
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', reveal);
     }, []);
 }; 

@@ -303,12 +303,67 @@ html {
 /* Add this class for sections to enable smooth reveal on scroll */
 .reveal {
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
 }
 
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Add these to your existing globals.css */
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.overflow-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.overflow-hidden {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Ensure the page doesn't scroll */
+html, body {
+  overflow: hidden;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-slide-in {
+  opacity: 0;
+  animation: slideIn 0.6s ease forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 3s ease-in-out 0.5s infinite;
+}
+
+.animate-float-delay-2 {
+  animation: float 3s ease-in-out 1s infinite;
 }
 
