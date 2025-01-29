@@ -1,32 +1,26 @@
-export default function DashboardLoading() {
+export default function DashboardVolunteersLoading() {
+    
+    // Interable arr with length 12
+    let arr = Array.apply(null, Array(12)).map(function (x, i) { return i; })
+
+
     return (
       <div className="animate-pulse">
         {/* Header skeleton */}
-        <div className="mb-8">
+        <div className="mb-10">
           <div className="h-8 w-48 bg-zinc-800 rounded-lg"></div>
         </div>
   
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
-          {/* Left column */}
-          <div className="space-y-4 md:space-y-6">
-            {/* Stats cards skeleton */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-              <div className="h-[160px] bg-zinc-800/50 rounded-lg"></div>
-              <div className="h-[160px] bg-zinc-800/50 rounded-lg"></div>
-            </div>
-  
-            {/* Event sections skeleton */}
-            <div className="space-y-4 md:space-y-6">
-              <div className="h-[200px] bg-zinc-800/50 rounded-lg"></div>
-              <div className="h-[200px] bg-zinc-800/50 rounded-lg"></div>
-            </div>
-          </div>
-  
-          {/* Right column */}
-          <div className="space-y-4 md:space-y-6">
-            <div className="h-[300px] bg-zinc-800/50 rounded-lg"></div>
-            <div className="h-[300px] bg-zinc-800/50 rounded-lg"></div>
-          </div>
+        <div className="grid grid-col grid-cols-4 gap-10 pr-32">
+            {arr.map((x,i) => (
+                <div key={i} className="w-full h-full grid gap-4">
+                    <div className="bg-zinc-800 h-64 rounded-lg"></div>
+                    <div>
+                        <div className="w-1/3 h-8 rounded-md bg-zinc-800 mb-2"></div>
+                        <div className="w-1/3 h-8 rounded-md bg-zinc-800"></div>
+                    </div>
+                </div>
+            ))}
         </div>
       </div>
     )
