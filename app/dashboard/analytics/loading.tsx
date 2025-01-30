@@ -14,6 +14,10 @@ export default function DashboardAnalyticsLoading() {
             <div className="h-[300px] bg-zinc-800/50 rounded-lg"></div>
             <div className="h-[300px] bg-zinc-800/50 rounded-lg"></div>
           </div>
+          <div className="space-y-4 md:space-y-6">
+            <div className="h-[300px] bg-zinc-800/50 rounded-lg"></div>
+            <div className="h-[300px] bg-zinc-800/50 rounded-lg"></div>
+          </div>
         </div>
       </div>
     )

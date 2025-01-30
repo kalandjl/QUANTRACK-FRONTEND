@@ -7,6 +7,7 @@ import VolunteerHoursChart from '@/components/dashboard/charts/VolunteerHoursCha
 import RevenueChart from '@/components/dashboard/charts/RevenueChart'
 import { UsersIcon, BuildingOffice2Icon } from '@heroicons/react/24/outline'
 import DashboardWithLoading from '@/components/dashboard/DashboardWithLoading'
+import Link from 'next/link'
 
 export default function DashboardPage() {
   const handleAddEvent = () => {
@@ -68,6 +69,11 @@ export default function DashboardPage() {
               </div>
               <div className="h-[300px] md:flex-1"> {/* Fixed height on mobile, flex on desktop */}
                 <RevenueChart />
+              </div>
+              <div id="analytics-link-wrap" className="bg-zinc-800 rounded-md px-2 py-1 w-1/3 text-gray-300 hover:text-gray-50">
+                <Link href="/dashboard/analytics">
+                  More Analytics →
+                </Link>
               </div>
             </div>
           </div>
