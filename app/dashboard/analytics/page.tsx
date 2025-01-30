@@ -4,8 +4,10 @@ import { NextPage } from "next";
 import example from "@/res/volunteers.json"
 import DashboardVolunteersWithLoading from "@/components/dashboard/volunteers/DashboardVolunteersWithLoading";
 import DashboardAnalyticsWithLoading from "@/components/dashboard/analytics/DashboardAnalyticsWithLoading";
-import RevenueChart from "@/components/dashboard/RevenueChart";
-import VolunteerHoursChart from "@/components/dashboard/VolunteerHoursChart";
+import RevenueChart from "@/components/dashboard/charts/RevenueChart";
+import VolunteerHoursChart from "@/components/dashboard/charts/VolunteerHoursChart";
+import EventsChart from "@/components/dashboard/charts/EventsChart";
+import ExpensesChart from "@/components/dashboard/charts/ExpensesChart";
 
 
 const Page: NextPage = () => {
@@ -28,8 +30,14 @@ const Page: NextPage = () => {
                                 <RevenueChart />
                             </div>
                         </div>
-                        <div className=""></div>
-                        
+                        <div className="flex flex-col gap-4 md:gap-6">
+                            <div className="h-[300px] md:flex-1"> {/* Fixed height on mobile, flex on desktop */}
+                                <EventsChart />
+                            </div>
+                            <div className="h-[300px] md:flex-1"> {/* Fixed height on mobile, flex on desktop */}
+                                <ExpensesChart />
+                            </div>
+                        </div>
                     </main>
                 </div>
             </DashboardAnalyticsWithLoading>

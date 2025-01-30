@@ -3,8 +3,8 @@
 import StatsCard from '@/components/dashboard/StatsCard'
 import EventProgress from '@/components/dashboard/EventProgress'
 import EventCategories from '@/components/dashboard/EventCategories'
-import VolunteerHoursChart from '@/components/dashboard/VolunteerHoursChart'
-import RevenueChart from '@/components/dashboard/RevenueChart'
+import VolunteerHoursChart from '@/components/dashboard/charts/VolunteerHoursChart'
+import RevenueChart from '@/components/dashboard/charts/RevenueChart'
 import { UsersIcon, BuildingOffice2Icon } from '@heroicons/react/24/outline'
 import DashboardWithLoading from '@/components/dashboard/DashboardWithLoading'
 
