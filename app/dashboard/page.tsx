@@ -22,7 +22,7 @@ export default function DashboardPage() {
       <div className="flex flex-col h-full">
         {/* Header */}
         <header className="shrink-0 h-16 flex items-center">
-          <h1 className="text-2xl md:text-3xl font-bold text-white">Dashboard</h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-white">Dashboard</h1> 
         </header>
 
         {/* Scrollable content */}

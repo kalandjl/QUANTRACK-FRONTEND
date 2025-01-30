@@ -9,8 +9,6 @@ const Page: NextPage = () => {
 
     let volunteers: Volunteer[] = example
 
-
-
     return (
         <>
         <DashboardVolunteersWithLoading>

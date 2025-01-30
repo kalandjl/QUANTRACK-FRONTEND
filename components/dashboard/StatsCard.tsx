@@ -21,7 +21,7 @@ const StatsCard = ({ title, value, icon: Icon, action }: StatsCardProps) => {
           <Icon className="w-5 h-5 text-zinc-100" />
         </div>
       </div>
-      <div className="text-3xl font-bold text-zinc-100 flex-grow flex items-center">{value}</div>
+      <div className="text-3xl font-bold text-zinc-100 flex-grow flex items-center mb-2">{value}</div>
       {action && (
         <button
           onClick={action.onClick}
