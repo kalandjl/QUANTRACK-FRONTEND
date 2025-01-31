@@ -11,6 +11,10 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        zinc: {
+          750: "#36363e",
+          850: '#202023'
+        },
       },
       animation: {
         blob: "blob 7s infinite",
