@@ -1,9 +1,9 @@
 'use client'
 
 import { ReactNode, Suspense } from 'react'
-import Sidebar from '@/components/dashboard/Sidebar'
 import { useState } from 'react'
 import DashboardLoading from './loading'
+import DashboardSidebar from '@/components/dashboard/DashboardSidebar'
 
 interface DashboardLayoutProps {
   children: ReactNode
@@ -16,7 +16,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
     <div className="flex h-screen bg-zinc-900 overflow-hidden">
       {/* Sidebar - collapsible on mobile */}
       <div className="fixed md:relative z-50">
-        <Sidebar isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
+        <DashboardSidebar isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
       </div>
 
       {/* Main content area */}

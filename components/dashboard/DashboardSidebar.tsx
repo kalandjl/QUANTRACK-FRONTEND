@@ -3,12 +3,12 @@ import Link from 'next/link'
 import { Dispatch, SetStateAction } from 'react'
 import { HomeIcon, CalendarIcon, UsersIcon, ChartPieIcon, PlusIcon, Cog6ToothIcon, ArrowRightOnRectangleIcon, Bars3Icon } from '@heroicons/react/24/outline'
 
-interface SidebarProps {
+interface DashboardSidebarProps {
   isCollapsed: boolean
   setIsCollapsed: Dispatch<SetStateAction<boolean>>
 }
 
-const Sidebar = ({ isCollapsed, setIsCollapsed }: SidebarProps) => {
+const DashboardSidebar = ({ isCollapsed, setIsCollapsed }: DashboardSidebarProps) => {
   const menuItems = [
     { icon: HomeIcon, href: '/dashboard', label: 'Home' },
     { icon: CalendarIcon, href: '/dashboard/events', label: 'Events' },
@@ -89,4 +89,4 @@ const Sidebar = ({ isCollapsed, setIsCollapsed }: SidebarProps) => {
   )
 }
 
-export default Sidebar 
+export default DashboardSidebar 
