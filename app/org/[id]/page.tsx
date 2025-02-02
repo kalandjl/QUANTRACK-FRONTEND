@@ -30,11 +30,19 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
     return (
         <>
-        
-                <header className="shrink-0 h-16 flex items-center">
-                    <h1 className="text-2xl md:text-3xl font-bold text-white">{data.name}</h1> 
-                </header>
-        
+            <div className="flex flex-col h-full">
+
+                <div id="header">
+                    <header className="shrink-0 h-16 flex items-center">
+                        <h1 className="text-2xl md:text-3xl font-bold text-white">{data.name}</h1> 
+                    </header>
+                    <p className="text-white">
+                        {data.description}
+                    </p>
+                </div>
+
+
+            </div>
         </>
     )
 }
