@@ -1,6 +1,9 @@
-[
+import Event from "@/lib/types/Event"
+
+let events: Event[] = [
     {
         "id": "alzxclncxz",
+        "organizationId": "a1b2c3d4",
         "name": "Beach Cleanup",
         "date": "Feb 8th, 2025",
         "curVolunteers": "3",
@@ -10,6 +13,7 @@
     },
     {
         "id": "plkasjdlnn",
+        "organizationId": "a1b2c3d4",
         "name": "Food Drive",
         "date": "Feb 12th, 2025",
         "curVolunteers": "9",
@@ -19,6 +23,7 @@
     },
     {
         "id": "qpwoeiruty",
+        "organizationId": "a1b2c3d4",
         "name": "Community Garden Planting",
         "date": "Feb 15th, 2025",
         "curVolunteers": "5",
@@ -28,6 +33,7 @@
     },
     {
         "id": "asdlkfjwer",
+        "organizationId": "a1b2c3d4",
         "name": "Animal Shelter Assistance",
         "date": "Feb 20th, 2025",
         "curVolunteers": "7",
@@ -37,6 +43,7 @@
     },
     {
         "id": "zxcvbnmasd",
+        "organizationId": "a1b2c3d4",
         "name": "Park Restoration",
         "date": "Feb 25th, 2025",
         "curVolunteers": "6",
@@ -46,6 +53,7 @@
     },
     {
         "id": "mnbvcxzlkj",
+        "organizationId": "a1b2c3d4",
         "name": "Charity Run Support",
         "date": "Mar 2nd, 2025",
         "curVolunteers": "12",
@@ -55,6 +63,7 @@
     },
     {
         "id": "wertyuioop",
+        "organizationId": "a1b2c3d4",
         "name": "Senior Center Visit",
         "date": "Mar 7th, 2025",
         "curVolunteers": "4",
@@ -64,6 +73,7 @@
     },
     {
         "id": "lkjhgfdsaz",
+        "organizationId": "a1b2c3d4",
         "name": "Library Book Sorting",
         "date": "Mar 10th, 2025",
         "curVolunteers": "8",
@@ -73,6 +83,7 @@
     },
     {
         "id": "poiuytrewx",
+        "organizationId": "a1b2c3d4",
         "name": "Blood Donation Drive",
         "date": "Mar 15th, 2025",
         "curVolunteers": "15",
@@ -82,6 +93,7 @@
     },
     {
         "id": "qazwsxedcr",
+        "organizationId": "a1b2c3d4",
         "name": "Homeless Shelter Meal Service",
         "date": "Mar 20th, 2025",
         "curVolunteers": "10",
@@ -90,3 +102,5 @@
         "endTime": "8:00pm"
     }
 ]
+
+export default events

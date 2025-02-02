@@ -9,7 +9,7 @@ export default function NavbarHandler() {
 
   if (isDashboard) return null
   return (
-    <nav className="fixed top-0 w-full bg-zinc-900 border-b border-zinc-800 z-50">
+    <nav className="top-0 w-full bg-zinc-900 border-b border-zinc-800 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="text-white font-bold text-xl">

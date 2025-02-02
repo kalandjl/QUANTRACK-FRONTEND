@@ -1,7 +1,7 @@
 import { chunkArray } from "@/lib/arr";
 import Volunteer from "@/lib/types/Volunteer";
 import { NextPage } from "next";
-import example from "@/res/volunteers.json"
+import example from "@/res/volunteers"
 import DashboardVolunteersWithLoading from "@/components/dashboard/volunteers/DashboardVolunteersWithLoading";
 
 

@@ -1,6 +1,6 @@
 import DashboardEventsWithLoading from "@/components/dashboard/events/DashboardEventsWithLoading";
 import { NextPage } from "next";
-import arr from "@/res/events.json";
+import arr from "@/res/events";
 import Event from "@/lib/types/Event";
 import { ClockIcon, PencilIcon, TrashIcon, UserIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
