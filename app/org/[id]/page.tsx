@@ -1,22 +1,19 @@
+import { fetchOrg } from "@/lib/db/organization/fetchOrgData";
+import organizations from "@/res/organizations";
 import { notFound } from "next/navigation";
 
-const Page = () => {
 
-    let data = {}
+const Page = async ({ params }: { params: { id: string } }) => {
+
+    let data = await fetchOrg(params.id)
 
     if (!data) notFound()
 
     return (
         <>
             <div className="flex flex-col h-full">
-                <div id="header">
-                <header className="shrink-0 h-16 flex items-center">
-                    <h1 className="text-2xl md:text-3xl font-bold text-gray-300">
-                    {/* <span className="italic text-white">{`"${data.name}"`}</span> */}
-                    </h1>
-                </header>
-                {/* <p className="text-white">{data.description}</p> */}
-                </div>
+                <p className="text-white">{data.description}</p>
+                {/* Location, Ammount of volunteers, Date joined Quantrack */}
             </div>
         </>
     )

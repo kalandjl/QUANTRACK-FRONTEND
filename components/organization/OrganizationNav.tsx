@@ -3,13 +3,15 @@ import Link from 'next/link'
 import { Dispatch, SetStateAction } from 'react'
 import { HomeIcon, CalendarIcon, UsersIcon, ChartPieIcon, PlusIcon, Cog6ToothIcon, ArrowRightOnRectangleIcon, Bars3Icon } from '@heroicons/react/24/outline'
 
-interface OrganizationNavProps {}
+interface OrganizationNavProps {
+  id: string
+}
 
-const OrganizationNav = ({}: OrganizationNavProps) => {
+const OrganizationNav = ({id}: OrganizationNavProps) => {
   const menuItems = [
-    { icon: HomeIcon, href: '/organization', label: 'Home' },
-    { icon: CalendarIcon, href: '/organization/events', label: 'Events' },
-    { icon: UsersIcon, href: '/organization/volunteers', label: 'Volunteers' },
+    { icon: HomeIcon, href: `/org/${id}`, label: 'Home' },
+    { icon: CalendarIcon, href: `/org/${id}/events`, label: 'Events' },
+    { icon: UsersIcon, href: `/org/${id}/volunteers`, label: 'Volunteers' },
   ]
 
   return (

@@ -17,7 +17,7 @@ const Home: NextPage = () => {
                     <div className="max-w-7xl mx-auto">
                         <div className="grid lg:grid-cols-2 gap-12 items-center">
                             <div className="space-y-8">
-                                <h1 className="text-4xl md:text-6xl font-bold text-stone-300 overflow-hidden">
+                                <h1 className="text-4xl md:text-6xl font-bold text-stone-300">
                                     <span className="block text-5xl md:text-7xl mb-4 animate-slide-in" style={{ animationDelay: '0.2s' }}>
                                         Revolutionize
                                     </span>
@@ -119,7 +119,7 @@ const Home: NextPage = () => {
                 </section>
             </div>
         </HomeWithLoading>
-    );
-};
+    )
+}
 
 export default Home;

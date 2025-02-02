@@ -10,6 +10,7 @@ interface OrganizationLayoutProps {
   children: ReactNode
 }
 
+
 const Layout = ({ children }: OrganizationLayoutProps) => {
   const path = usePathname();
   const id = path.split("/")[2]
@@ -26,18 +27,22 @@ const Layout = ({ children }: OrganizationLayoutProps) => {
     }
   }, [id])
 
-  if (!data) return notFound()
 
   return (
-    <div className="flex flex-col h-screen bg-zinc-900 overflow-hidden">
+    <div className="flex flex-col min-h-screen bg-zinc-900">
+        <header className="px-4 py-5">
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-300">
+                <span className="italic text-white">{`"${data?.name}"`}</span>
+            </h1>
+        </header>
         <div className="z-50">
-            <OrganizationNav />
+            <OrganizationNav id={id} />
         </div>
         <div className="flex-1 flex flex-col transition-all duration-300">
-            <main className="flex-1 overflow-hidden">
+            <main className="flex-1">
             <div className="h-full p-4 md:p-6 lg:p-8">
-                <div className="h-full overflow-y-auto">
-                {children}
+                <div className="h-full">
+                  {children}
                 </div>
             </div>
             </main>

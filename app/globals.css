@@ -66,7 +66,7 @@ body {
     font-weight: bold;
     pointer-events: none;
     user-select: none;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .word {
@@ -327,7 +327,7 @@ html {
 
 /* Ensure the page doesn't scroll */
 html, body {
-  overflow: hidden;
+  overflow: auto;
 }
 
 @keyframes slideIn {
