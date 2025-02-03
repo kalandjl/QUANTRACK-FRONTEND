@@ -4,11 +4,11 @@ import Link from 'next/link';
 
 const FeaturesSection: FC = () => {
     return (
-        <section className="px-4 sm:px-6 lg:px-8 py-12 bg-gradient-to-b from-zinc-900 to-zinc-800">
-            <div className="max-w-7xl mx-auto">
+        <section className="w-full bg-zinc-800/50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <div className="grid lg:grid-cols-2 gap-8 items-center">
                     <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-100 to-stone-400">
+                        <h2 className="text-3xl md:text-4xl font-bold text-stone-300">
                             Customize for free
                         </h2>
                         <div className="grid sm:grid-cols-2 gap-4">

@@ -35,7 +35,11 @@ const HomeWithLoading: FC<Props> = ({ children }) => {
         );
     }
 
-    return <>{children}</>;
+    return (
+        <div className="min-h-screen flex flex-col bg-zinc-900 overflow-x-hidden">
+            {children}
+        </div>
+    );
 };
 
 export default HomeWithLoading; 

@@ -3,23 +3,23 @@ import { useEffect } from 'react';
 
 export const useScrollReveal = () => {
     useEffect(() => {
-        const revealElements = document.querySelectorAll('.reveal');
+        const reveals = document.querySelectorAll('.reveal');
         
-        const reveal = () => {
-            revealElements.forEach((element) => {
-                const windowHeight = window.innerHeight;
+        const revealOnScroll = () => {
+            reveals.forEach((element) => {
                 const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150; // Adjust this value to change when the animation triggers
+                const elementVisible = 150;
                 
-                if (elementTop < windowHeight - elementVisible) {
+                if (elementTop < window.innerHeight - elementVisible) {
                     element.classList.add('active');
                 }
             });
         };
-
-        window.addEventListener('scroll', reveal);
-        reveal(); // Initial check
-
-        return () => window.removeEventListener('scroll', reveal);
+        
+        window.addEventListener('scroll', revealOnScroll);
+        // Initial check
+        revealOnScroll();
+        
+        return () => window.removeEventListener('scroll', revealOnScroll);
     }, []);
 }; 

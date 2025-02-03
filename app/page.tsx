@@ -5,13 +5,14 @@ import StatsSection from "@/components/Home/StatsSection";
 import FeaturesSection from "@/components/Home/FeaturesSection";
 import HomeWithLoading from "@/components/Home/HomeWithLoading";
 import { useScrollReveal } from "@/util/useScrollReveal";
+import Footer from "@/components/Footer";
 
 const Home: NextPage = () => {
     useScrollReveal();
 
     return (
         <HomeWithLoading>
-            <div id="home-page-wrap">
+            <div id="home-page-wrap" className="flex flex-col min-h-screen overflow-x-hidden">
                 {/* Hero Section */}
                 <section className="relative px-4 sm:px-6 lg:px-8 py-16">
                     <div className="max-w-7xl mx-auto">
@@ -108,15 +109,16 @@ const Home: NextPage = () => {
                     </div>
                 </section>
 
-                {/* Stats Section with reveal */}
-                <section className="reveal px-4 sm:px-6 lg:px-8 py-8 bg-zinc-800/50">
-                    <StatsSection />
-                </section>
+                {/* Stats Section */}
+                <StatsSection />
 
-                {/* Features Section with reveal */}
-                <section className="reveal px-4 sm:px-6 lg:px-8 py-8 bg-zinc-800">
+                {/* Features Section */}
+                <div className="w-full">
                     <FeaturesSection />
-                </section>
+                </div>
+
+                {/* Footer */}
+                <Footer />
             </div>
         </HomeWithLoading>
     )
