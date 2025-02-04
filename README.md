@@ -20,7 +20,7 @@ Quantrack aims to revolutionize how non-profit organizations manage and track vo
 
 #### Backend Repo
 
-* (https://github.com/ThomasDLi/QUANTRACK)
+* (https://github.com/kalandjl/QUANTRACK)
 
 
 
